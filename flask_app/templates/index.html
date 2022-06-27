@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+     rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" 
+     crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+     integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"></script>
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <style>
+        img{display:block;
+            margin:auto;}
+
+        .one
+        {
+        width:2000px;
+        border-bottom-style:groove;
+        border-bottom-width:medium;
+        border-bottom-color:white;
+        }      
+    </style>
+
+
+
+</head>
+<body style = "background-color: #72B6E5";>
+    <nav class="navbar navbar-expand-lg bg-pink">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="https://mosquitoproject.herokuapp.com/main" style="color:black;"><strong>Home</strong></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="http://49.142.46.2:3000/dashboard/1-mosquito" target="_blank">모기정보</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    관련상품
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="nav-link" href="https://www.coupang.com/np/search?component=&q=%EB%AA%A8%EA%B8%B0%ED%87%B4%EC%B9%98%EC%A0%9C&channel=user" target="_blank">모기퇴치제</a>
+                    <a class="nav-link" href="https://www.coupang.com/np/search?component=&q=%ED%85%90%ED%8A%B8%EC%A0%9C%ED%92%88&channel=user" target="_blank">여행,텐트</a>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  데이터 출처링크
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <li><a class="dropdown-item" href="https://www.kaggle.com/datasets/kukuroo3/mosquito-indicator-in-seoul-korea" target="_blank">Kaggle</a></li>
+                  <li><a class="dropdown-item" href="https://data.seoul.go.kr/dataList/OA-13285/S/1/datasetView.do" target="_blank">서울열린 데이터광장</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+    <!-- 경계선 -->
+    <div class="one"></div><br><br>
+
+    <center>
+    <font size = "6em">
+    <strong> 현재 서울시에 모기분포가 얼마나 될까?</strong><br>
+    </font>
+        (머신러닝기반 모기수 예측)
+    
+    
+    </center>
+    <div class = "container">
+    <img src = "https://health.chosun.com/site/data/img_dir/2021/07/13/2021071300613_0.jpg", alt = "모기이미지", width = '450', height = '300'>
+    </div>
+    <form method = "GET" action = 'calculate'>
+        <center>
+        <font size = "6">
+        <strong>해당정보를 작성후 제출버튼 눌러주세요.</strong><br>
+        </font>
+        <font size = "4">
+        (네이버에 "날씨정보"를 치시면 정보를 구할수있습니다, 단위무시)
+        </font>
+        
+        </center>
+        <br>
+        <center>
+        <div>
+            <strong>
+            <font size = 6>
+            <label for = "date">날짜 :</label>
+            </font>
+            <input type = "text" name = "date" placeholder = "06-28" style = "height:40px;width:70px;font-size:20px;">
+            <font size = 5>(월-일)</font>
+            </strong>
+        </div>
+        <div>
+            <strong>
+            <font size = 6>  
+            <label for = "water">강수량 :</label>
+            </font>
+            <input type = "text" name = "water" placeholder = "10" style = "height:40px;width:70px;font-size:20px;">
+            <font size = 5>(mm)</font>
+            </strong>
+        </div>
+            <strong>
+            <font size = 6>  
+            <label for = "mean">평균기온(C):</label>
+            </font>
+            <input type = "text" name = "mean" placeholder = "18.5" style = "height:40px;width:70px;font-size:20px;">
+            <font size = 5>(C)</font>
+            </strong>
+        <div>
+            <strong>
+            <font size = 6>  
+            <label for = "min">최저기온(C) :</label>
+            </font>
+            <input type = "text" name = "min" placeholder = "14.5" style = "height:40px;width:70px;font-size:20px;">
+            <font size = 5>(C)</font>
+            </strong>
+        </div>
+        <div>
+            <strong>
+            <font size = 6>
+            <label for = "max">최대기온(C) :</label>
+            </font>
+            <input type = "text" name = "max" placeholder = "20.5" style = "height:40px;width:70px;font-size:20px;">
+            <font size = 5>(C)</font>
+            </strong>
+        </div>
+        <div class = 'submit'>
+            <input type = "submit" value = "제출" style = "font-size:25px">
+        </div>
+        </center>
+             
+    </form>
+
+</body>
+</html>
+
