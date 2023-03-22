@@ -20,8 +20,6 @@
   - METABASE를 활용한 대시보드 제작
   - SQL로 input 데이터 연동
 
-- 커머스적인 요소 추가!(DA관점으로)
-
 
 - **데이터**  
   - 케글 Mosquito Indicator in Seoul, Korea(https://www.kaggle.com/datasets/kukuroo3/mosquito-indicator-in-seoul-korea) 
